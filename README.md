@@ -1,40 +1,40 @@
-# Educational Mini-Game Hub
+# Hub de Minijuegos Educativos
 
-A first version of a clean, responsive hub for published educational mini-games.
+Primera version de un hub limpio y responsive para minijuegos educativos publicados.
 
-## Games
+## Juegos
 
-The hub is data-driven. Edit `src/games.ts` to add games or change published URLs.
+El hub esta basado en datos. Edita `src/games.ts` para agregar juegos o cambiar URLs publicadas.
 
-Current entries:
+Entradas actuales:
 
 - MagoPalabra
 - Matheosaurus
 
-## Development
+## Desarrollo
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Build
+## Compilacion
 
 ```bash
 npm run build
 ```
 
-The production files are generated in `dist`.
+Los archivos de produccion se generan en `dist`.
 
 ## GitHub Pages
 
-This repo includes `.github/workflows/deploy.yml`.
+Este repo incluye `.github/workflows/deploy.yml`.
 
-To publish:
+Para publicar:
 
-1. Push the repository to GitHub.
-2. In GitHub, open `Settings > Pages`.
-3. Set `Build and deployment > Source` to `GitHub Actions`.
-4. Push to `main`.
+1. Sube los cambios a GitHub.
+2. En GitHub, abre `Settings > Pages`.
+3. Configura `Build and deployment > Source` como `GitHub Actions`.
+4. Sube cambios a `main`.
 
-The Vite `base` path is derived from `GITHUB_REPOSITORY`, so project pages such as `https://username.github.io/repo-name/` work without hardcoding the repo name.
+La ruta `base` de Vite se deriva de `GITHUB_REPOSITORY`, asi que paginas de proyecto como `https://username.github.io/repo-name/` funcionan sin fijar el nombre del repo en el codigo.
