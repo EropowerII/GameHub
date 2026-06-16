@@ -2,10 +2,10 @@ import { useMemo, useState } from "react";
 import { games, subjects, type Game, type SubjectFilter } from "./games";
 
 function App() {
-  const [activeSubject, setActiveSubject] = useState<SubjectFilter>("All");
+  const [activeSubject, setActiveSubject] = useState<SubjectFilter>("Todos");
 
   const filteredGames = useMemo(() => {
-    if (activeSubject === "All") {
+    if (activeSubject === "Todos") {
       return games;
     }
 
@@ -16,10 +16,10 @@ function App() {
     <main className="app-shell">
       <section className="hero" aria-labelledby="page-title">
         <div className="hero-copy">
-          <p className="eyebrow">Mini-game library</p>
-          <h1 id="page-title">Educational Mini-Game Hub</h1>
+          <p className="eyebrow">Biblioteca de minijuegos</p>
+          <h1 id="page-title">Hub de Minijuegos Educativos</h1>
           <p className="hero-text">
-            Choose a playful practice game, jump in quickly, and keep the learning session focused.
+            Elige un juego de práctica, entra rápido y mantén la sesión de aprendizaje enfocada.
           </p>
         </div>
 
@@ -36,9 +36,9 @@ function App() {
         </div>
       </section>
 
-      <section className="toolbar" aria-label="Filter games by subject">
+      <section className="toolbar" aria-label="Filtrar juegos por área">
         <div>
-          <p className="toolbar-label">Subject</p>
+          <p className="toolbar-label">Área</p>
           <div className="filter-group" role="list">
             {subjects.map((subject) => (
               <button
@@ -54,11 +54,11 @@ function App() {
           </div>
         </div>
         <p className="result-count">
-          {filteredGames.length} {filteredGames.length === 1 ? "game" : "games"}
+          {filteredGames.length} {filteredGames.length === 1 ? "juego" : "juegos"}
         </p>
       </section>
 
-      <section className="game-grid" aria-label="Available games">
+      <section className="game-grid" aria-label="Juegos disponibles">
         {filteredGames.map((game) => (
           <GameCard game={game} key={game.id} />
         ))}
@@ -73,7 +73,7 @@ function GameCard({ game }: { game: Game }) {
       <div className="card-art" aria-hidden="true">
         <span className="orb orb-large" />
         <span className="orb orb-small" />
-        <span className="card-symbol">{game.subject === "Math" ? "123" : "ABC"}</span>
+        <span className="card-symbol">{game.subject === "Matemáticas" ? "123" : "ABC"}</span>
       </div>
 
       <div className="card-content">
@@ -87,7 +87,7 @@ function GameCard({ game }: { game: Game }) {
 
         <dl className="meta-list">
           <div>
-            <dt>Skill</dt>
+            <dt>Habilidad</dt>
             <dd>{game.skill}</dd>
           </div>
         </dl>
@@ -95,7 +95,7 @@ function GameCard({ game }: { game: Game }) {
         <p className="description">{game.description}</p>
 
         <a className="play-button" href={game.playUrl} target="_blank" rel="noreferrer">
-          Play
+          Jugar
           <span aria-hidden="true">-&gt;</span>
         </a>
       </div>
